@@ -88,17 +88,6 @@ public class EventsController : ControllerBase
             Category = "Workshop",
             Description = "Explore how digital technologies are changing modern businesses."
         }
-
-
-
-
-
-
-
-
-
-
-
     };
 
     [HttpGet]
@@ -110,52 +99,44 @@ public class EventsController : ControllerBase
     [HttpPost]
     public IActionResult CreateEvent(Event newEvent)
     {
-        newEvent.Id = events.Count + 1;
+        newEvent.Id = events.Count == 0 ? 1 : events.Max(e => e.Id) + 1;
 
         events.Add(newEvent);
 
         return Ok(newEvent);
     }
-    
-    
+
     [HttpPut("{id}")]
     public IActionResult UpdateEvent(int id, Event updatedEvent)
     {
-    var existingEvent = events.FirstOrDefault(e => e.Id == id);
+        var existingEvent = events.FirstOrDefault(e => e.Id == id);
 
-    if (existingEvent == null)
-    {
-        return NotFound();
+        if (existingEvent == null)
+        {
+            return NotFound();
+        }
+
+        existingEvent.Title = updatedEvent.Title;
+        existingEvent.Date = updatedEvent.Date;
+        existingEvent.Department = updatedEvent.Department;
+        existingEvent.Category = updatedEvent.Category;
+        existingEvent.Description = updatedEvent.Description;
+
+        return Ok(existingEvent);
     }
-
-    existingEvent.Title = updatedEvent.Title;
-    existingEvent.Date = updatedEvent.Date;
-    existingEvent.Department = updatedEvent.Department;
-    existingEvent.Category = updatedEvent.Category;
-    existingEvent.Description = updatedEvent.Description;
-
-    return Ok(existingEvent);
-    }
-
-
 
     [HttpDelete("{id}")]
     public IActionResult DeleteEvent(int id)
     {
-    var existingEvent = events.FirstOrDefault(e => e.Id == id);
+        var existingEvent = events.FirstOrDefault(e => e.Id == id);
 
-    if (existingEvent == null)
-    {
-        return NotFound();
+        if (existingEvent == null)
+        {
+            return NotFound();
+        }
+
+        events.Remove(existingEvent);
+
+        return Ok();
     }
-
-    events.Remove(existingEvent);
-
-    return Ok();
-    }
-
-                    
-
-
-
 }
