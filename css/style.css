@@ -1,0 +1,282 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    color: #222;
+    font-family: Candara, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    background: #76B900;
+    color: white;
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 21px;
+}
+
+header h1 a,
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin-left: 25px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 2fr 0.75fr;
+    gap: 25px;
+}
+
+#filters {
+    position: sticky;
+    top: 20px;
+}
+
+#role-section {
+    margin-bottom: 12px;
+}
+
+#my-registrations {
+    margin-top: 12px;
+}
+
+#filter-section h3,
+#my-registrations h2,
+#events-section > h2,
+.event-card h3,
+#community-section h3,
+#event-details h2,
+#event-details h3,
+#registration-form h3,
+#event-form h3,
+#dashboard-events .event-card h3,
+#role-popup-box h2 {
+    color: #76B900;
+}
+
+#role-select,
+#filter-section input,
+#filter-section select {
+    width: 100%;
+}
+
+#event-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.event-card h3 a {
+    color: #76B900;
+    text-decoration: none;
+}
+
+.event-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.event-card p {
+    font-size: 13px;
+}
+
+
+button,
+.register-button,
+.popup-role {
+    background: #76B900;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Candara, sans-serif;
+    font-size: 13px;
+}
+
+button {
+    padding: 6px 11px;
+    margin-top: 8px;
+    margin-right: 6px;
+}
+
+.register-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 11px;
+    margin-top: 8px;
+}
+
+.popup-role {
+    padding: 6px 12px;
+    margin: 4px;
+}
+
+button:hover,
+.popup-role:hover,
+.register-button:hover {
+    background: #8dcc1a;
+}
+
+#community-section {
+    padding: 15px;
+}
+
+#community-section img {
+    width: 100%;
+    height: auto;
+}
+
+#community-section h3 {
+    color: #76B900;
+}
+
+#community-section a {
+    color: #76B900;
+}
+
+form {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#event-details {
+    max-width: 900px;
+    margin: auto;
+}
+
+#registration-form {
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+#dashboard-events .event-card {
+    margin-bottom: 20px;
+}
+
+#event-form {
+    margin: 20px 0 35px;
+}
+
+form p[id$="-error"] {
+    color: #c62828;
+}
+
+#role-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#role-popup-box {
+    background: white;
+    width: 420px;
+    padding: 35px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .page-layout {
+        grid-template-columns: 180px 1fr;
+    }
+
+    #community-section {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #filters {
+        position: static;
+    }
+
+    #event-list {
+        grid-template-columns: 1fr;
+    }
+
+    #community-section {
+        display: block;
+    }
+
+    #role-popup-box {
+        width: 90%;
+    }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to Cybersecurity",
+    "date": "2026-09-15",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "A practical introduction to basic cybersecurity concepts for students who want to understand how common attacks happen and how they can be prevented. The workshop covers passwords, phishing, social engineering, malware, safe browsing and basic security practices. No previous cybersecurity experience is required. Students will also work through a few simple examples and discuss security problems they may encounter in everyday life."
+  },
+  {
+    "id": 2,
+    "title": "Career Afternoon: Working in IT",
+    "date": "2026-09-18",
+    "department": "Business",
+    "category": "Event",
+    "description": "An informal afternoon for students interested in careers in IT and digital business. The session focuses on different career paths, internships, first jobs and skills that companies commonly look for in students and graduates. There will be time for questions and discussion with other students. The event is suitable for students from different study backgrounds and does not require any previous work experience."
+  },
+  {
+    "id": 3,
+    "title": "Git and GitHub Basics",
+    "date": "2026-09-22",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "This workshop introduces Git and GitHub and shows how they can be used during university projects. Students will learn how to create a repository, make commits, work with branches and push their projects to GitHub. The workshop is mainly practical, so participants should bring a laptop with Git installed. It is aimed at students who have used Git a little or have never used it before."
+  },
+  {
+    "id": 4,
+    "title": "Student Welcome Meetup",
+    "date": "2026-09-25",
+    "department": "Business",
+    "category": "Event",
+    "description": "A relaxed meetup for students to get to know other people from different courses and semesters. There will be some simple activities, food and time to talk about university life, courses and student experiences. New students are especially welcome, but everyone can join. The event is intended to be informal and there is no registration requirement beyond signing up through the platform."
+  },
+  {
+    "id": 5,
+    "title": "Building Your First Web Application",
+    "date": "2026-10-05",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "A hands-on workshop covering the basic steps involved in creating a small web application. Students will work with HTML, CSS and JavaScript and build a simple page that responds to user interaction. The session also introduces the idea of separating the structure, styling and logic of a web application. It is designed for students who want more practice with the technologies used in introductory web development courses."
+  },
+  {
+    "id": 6,
+    "title": "Study and Time Management Session",
+    "date": "2026-10-09",
+    "department": "Business",
+    "category": "Workshop",
+    "description": "This session looks at practical ways of organising university work during busy periods. Students can compare different methods for planning assignments, preparing for exams and keeping track of deadlines. The focus is not on one specific productivity system. Instead, students can try a few simple approaches and decide which one works best for their own schedule."
+  },
+  {
+    "id": 7,
+    "title": "Cloud Computing Introduction",
+    "date": "2026-10-13",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "An introductory session about cloud computing and the services commonly used when developing modern applications. Topics include virtual machines, cloud storage, containers and basic deployment concepts. The session also explains why companies use cloud platforms instead of running every service on their own hardware. Students will see simple examples of how a small web application could be deployed to a cloud environment."
+  },
+  {
+    "id": 8,
+    "title": "International Students Coffee Meetup",
+    "date": "2026-10-16",
+    "department": "Business",
+    "category": "Event",
+    "description": "A casual coffee meetup for international and local students. The event is simply an opportunity to meet people, exchange experiences and talk about studying and living in Berlin. Students can come alone or with friends, and there is no planned presentation or formal programme. The main goal is to create an easy way for students who may not normally meet each other to connect."
+  },
+  {
+    "id": 9,
+    "title": "Web Application Security Workshop",
+    "date": "2026-10-20",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "This workshop introduces some of the security problems that can occur in web applications. Students will look at examples involving unsafe input, cross-site scripting, weak validation and access control. The session also discusses why security checks should not only be performed in the browser. The examples are kept at an introductory level and are intended to help students recognise common mistakes when developing their own applications."
+  },
+  {
+    "id": 10,
+    "title": "Business and Technology Networking Evening",
+    "date": "2026-10-23",
+    "department": "Business",
+    "category": "Event",
+    "description": "An evening event bringing together students interested in the connection between business and technology. Students can talk about university projects, internships, career plans and ideas for future digital products. There will be a short introduction at the beginning followed by informal discussions. The event is open to students from different backgrounds because many technology-related careers involve both technical and business knowledge."
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Docker",
+    "date": "2026-10-27",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "A beginner-friendly introduction to Docker and containerisation. Students will learn what a container is, why containers are useful and how a basic application can be packaged into a container. The session also introduces Docker images and the basic Docker workflow. Some simple commands will be demonstrated during the workshop, making it useful for students who have heard about containers but have not used them in a project yet."
+  },
+  {
+    "id": 12,
+    "title": "Student Projects Showcase",
+    "date": "2026-10-30",
+    "department": "Computer Science",
+    "category": "Event",
+    "description": "Students can present small projects they have worked on during their studies. Projects may include websites, software applications, security projects or other technology-related work. The showcase gives students the opportunity to explain what they built, what problems they encountered and what they learned from the process. Other students are welcome to attend even if they are not presenting a project themselves."
+  },
+  {
+    "id": 13,
+    "title": "Exam Preparation Study Group",
+    "date": "2026-11-03",
+    "department": "Business",
+    "category": "Event",
+    "description": "A study session where students can work together before the upcoming examination period. Participants can bring their own notes and questions and use the session to review difficult topics. There is no fixed lecture or presentation. The idea is to provide a quiet place where students can study together and help each other when they get stuck."
+  },
+  {
+    "id": 14,
+    "title": "REST APIs and Web Communication",
+    "date": "2026-11-06",
+    "department": "Computer Science",
+    "category": "Workshop",
+    "description": "This workshop explains how web applications communicate with backend services using REST APIs. Students will learn the purpose of common HTTP methods and how data can be exchanged using JSON. A small example application will be used to demonstrate how a frontend can request and send data to a service. The workshop is intended for students who already have a basic understanding of HTML and JavaScript."
+  },
+  {
+    "id": 15,
+    "title": "End of Semester Student Gathering",
+    "date": "2026-11-20",
+    "department": "Business",
+    "category": "Event",
+    "description": "A relaxed gathering for students at the end of the semester. It is a chance to take a break from assignments and exams, meet other students and spend some time together. There will be food, drinks and informal activities. Students from different semesters and study programmes are welcome to attend."
+  }
+]

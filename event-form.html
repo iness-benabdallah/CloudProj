@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Registration</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/system.js" defer></script>
+    <script src="js/registration.js" defer></script>
+  
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Event Registration</h1>
+
+        <nav>
+            <a href="index.html">Events</a>
+            <a id="dashboard-link" href="dashboard.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section>
+
+            <h2>Register for Event</h2>
+
+            <form id="registration-form">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <p id="name-error"></p>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+                <p id="email-error"></p>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>HTW Campus Events © 2026</p>
+
+    </footer>
+
+</body>
+
+</html>

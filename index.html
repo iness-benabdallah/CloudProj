@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTW Campus Events</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/system.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/registration.js" defer></script>
+
+</head>
+
+<body>
+
+
+    <div id="role-popup">
+
+        <div id="role-popup-box">
+
+            <h2>✨ Welcome to HTW Campus Events!</h2>
+
+            <p>
+                Explore university events and workshops,
+                discover new opportunities and connect
+                with the HTW community. 🎓
+            </p>
+
+            <p>
+                Please choose your role to get started.
+            </p>
+
+            <button class="popup-role" value="guest">
+                Guest
+            </button>
+
+            <button class="popup-role" value="student">
+                Student
+            </button>
+
+            <button class="popup-role" value="organizer">
+                Organizer
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <header>
+
+        <h1>
+            <a href="index.html">
+                HTW Campus Events
+            </a>
+        </h1>
+
+        <nav>
+
+            <a href="index.html">
+                Events
+            </a>
+
+            <a id="dashboard-link" href="dashboard.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+
+    <main>
+
+        <div class="page-layout">
+
+
+            <section id="filters">
+
+
+
+                <div id="role-section">
+
+                    <label for="role-select">
+                        Role:
+                    </label>
+
+                    <select id="role-select">
+
+                        <option value="guest">
+                            Guest
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="organizer">
+                            Organizer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+
+                <div id="filter-section">
+
+                    <h3>
+                        Find Events
+                    </h3>
+
+
+                    <form id="search-form">
+
+                        <label for="search-input">
+                            Search:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="search-input">
+
+                    </form>
+
+
+                    <label for="category-filter">
+                        Category:
+                    </label>
+
+                    <select id="category-filter">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        <option value="Workshop">
+                            Workshop
+                        </option>
+
+                        <option value="Event">
+                            Event
+                        </option>
+
+                    </select>
+
+
+
+                    <label for="department-filter">
+                        Department:
+                    </label>
+
+                    <select id="department-filter">
+
+                        <option value="">
+                            All Departments
+                        </option>
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Business">
+                            Business
+                        </option>
+
+                    </select>
+
+
+
+                    <label for="date-filter">
+                        Date:
+                    </label>
+
+                    <select id="date-filter">
+
+                        <option value="">
+                            All Dates
+                        </option>
+
+                        <option value="2026-09-15">
+                            15 September 2026
+                        </option>
+
+                        <option value="2026-10-05">
+                            5 October 2026
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+
+                <section id="my-registrations">
+
+                    <h2>
+                        My Registrations
+                    </h2>
+
+                    <div id="registration-list"></div>
+
+
+                    <form
+                        id="edit-registration-form"
+                        class="hidden">
+
+                        <h3>
+                            Edit Registration
+                        </h3>
+
+                        <input
+                            type="hidden"
+                            id="edit-registration-id">
+
+
+                        <label for="edit-name">
+                            Name:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="edit-name">
+
+                        <p id="name-error"></p>
+
+
+
+                        <label for="edit-email">
+                            Email:
+                        </label>
+
+                        <input
+                            type="email"
+                            id="edit-email">
+
+                        <p id="email-error"></p>
+
+
+                        <button type="submit">
+                            Save
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+
+       
+
+            <section id="events-section">
+
+                <h2>
+                    Our upcoming Events
+                </h2>
+
+                <div id="event-list"></div>
+
+            </section>
+
+
+
+            <section id="community-section">
+
+                <img
+                    src="https://campuseventstorageiness.blob.core.windows.net/images/community.jpg"
+                    alt="Students interacting at a university event">
+
+                <h3>
+                    Building a Stronger Community
+                </h3>
+
+                <p>
+                    HTW Campus Events brings students,
+                    departments and university initiatives
+                    together in one place.
+                </p>
+
+                <p>
+                    Through workshops, projects and
+                    community activities, students can
+                    discover new opportunities, develop
+                    useful skills and build valuable
+                    connections.
+                </p>
+
+                <p>
+                    Our community continues to support
+                    students in achieving their goals and
+                    creating meaningful experiences
+                    throughout their university journey.
+                </p>
+
+                <a href="#">
+                    Discover more →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HTW Campus Events © 2026
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
