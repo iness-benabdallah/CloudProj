@@ -1,70 +1,49 @@
-
+function labelledParagraph(label, value) {
+    return $("<p></p>")
+        .append($("<strong></strong>").text(label + " "))
+        .append(document.createTextNode(value));
+}
 
 
 function displayEvents(events) {
 
     let eventList = document.getElementById("event-list");
     eventList.innerHTML = "";
+
     let role = localStorage.getItem("role");
 
     events.forEach(function (event) {
 
-          let registerButton = "";
+        let description = String(event.description || "");
 
-          if (role === "student") {
-
-            registerButton = `
-                <a class="register-button" href="event-form.html?id=${event.id}">
-                    Register
-                </a>
-            `;
+        if (description.length > 100) {
+            description = description.substring(0, 100) + "...";
         }
 
-        let shortDescription = event.description;
-        if (event.description.length > 100) {
+        let card = $("<article class='event-card'></article>");
 
-              shortDescription =
-                event.description.substring(0, 100) + "...";
+        let heading = $("<h3></h3>").append(
+            $("<a></a>")
+                .attr("href", "event-details.html?id=" + encodeURIComponent(event.id))
+                .text(event.title)
+        );
+
+        card.append(heading);
+        card.append(labelledParagraph("Date:", event.date));
+        card.append(labelledParagraph("Department:", event.department));
+        card.append(labelledParagraph("Category:", event.category));
+        card.append($("<p></p>").text(description));
+
+        if (role === "student") {
+            card.append(
+                $("<a class='register-button'></a>")
+                    .attr("href", "event-form.html?id=" + encodeURIComponent(event.id))
+                    .text("Register")
+            );
         }
 
-
-
-        let card = `
-            <article class="event-card">
-
-                <h3>
-                <a href="event-details.html?id=${event.id}">
-                        ${event.title}
-                </a>
-                </h3>
-
-                <p>
-                    <strong>Date:</strong>
-                    ${event.date}
-                </p>
-
-                <p>
-                    <strong>Department:</strong>
-                    ${event.department}
-                </p>
-
-                <p>
-                    <strong>Category:</strong>
-                    ${event.category}
-                </p>
-
-                <p>
-                    ${shortDescription}
-                </p>
-
-                ${registerButton}
-
-            </article>
-        `;
-       $("#event-list").append(card);
+        $(eventList).append(card);
 
     });
 
 }
-
-
