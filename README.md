@@ -1,4 +1,4 @@
-# 🎓 Campus Events Management System
+# Campus Events Management System
 
 A web-based application designed to simplify campus event management. Students can explore upcoming events and register for them, while organizers can create, update, and manage events and registrations.
 
