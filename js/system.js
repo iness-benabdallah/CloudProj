@@ -12,9 +12,9 @@ if (rolePopup) {
         rolePopup.style.display = "none";
     }
 
-    document.querySelectorAll(".popup-role").forEach(function(button) {
+    document.querySelectorAll(".popup-role").forEach(function (button) {
 
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
 
             let selectedRole = button.value;
 
@@ -87,7 +87,7 @@ let eventForm =
 
 if (eventForm) {
 
-    eventForm.addEventListener("submit", function(event) {
+    eventForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
@@ -181,7 +181,7 @@ if (eventForm) {
                 data:
                     JSON.stringify(newEvent),
 
-                success: function(updatedEvent) {
+                success: function (updatedEvent) {
 
                     console.log(
                         "Event updated:",
@@ -196,7 +196,7 @@ if (eventForm) {
 
                 },
 
-                error: function() {
+                error: function () {
 
                     console.log(
                         "Could not update event."
@@ -227,7 +227,7 @@ if (eventForm) {
                 data:
                     JSON.stringify(newEvent),
 
-                success: function(createdEvent) {
+                success: function (createdEvent) {
 
                     console.log(
                         "Event created:",
@@ -240,7 +240,7 @@ if (eventForm) {
 
                 },
 
-                error: function() {
+                error: function () {
 
                     console.log(
                         "Could not create event."
@@ -259,190 +259,80 @@ if (eventForm) {
 
 function displayDashboardEvents() {
 
-    let container =
-        document.getElementById("dashboard-events");
+    let container = document.getElementById("dashboard-events");
 
     if (!container) {
         return;
     }
 
-    $.getJSON(
-        SYSTEM_API_URL,
-        function(events) {
+    $.getJSON(SYSTEM_API_URL, function (events) {
 
-            let registrations =
-                JSON.parse(
-                    localStorage.getItem("registrations")
-                );
+        let registrations =
+            JSON.parse(localStorage.getItem("registrations")) || [];
 
-            if (!registrations) {
-                registrations = [];
-            }
+        $(container).empty();
 
-            container.innerHTML = "";
+        events.forEach(function (event) {
 
-            events.forEach(function(event) {
+            let card = $("<article class='event-card'></article>");
 
-                let card =
-                    document.createElement("article");
+            card.append($("<h3></h3>").text(event.title));
+            card.append($("<p></p>").text("Date: " + event.date));
+            card.append($("<p></p>").text("Department: " + event.department));
+            card.append($("<p></p>").text("Category: " + event.category));
+            card.append($("<p></p>").text("Description: " + event.description));
 
-                card.setAttribute(
-                    "class",
-                    "event-card"
-                );
-
-                card.innerHTML =
-                    "<h3>" +
-                    event.title +
-                    "</h3>" +
-
-                    "<p>Date: " +
-                    event.date +
-                    "</p>" +
-
-                    "<p>Department: " +
-                    event.department +
-                    "</p>" +
-
-                    "<p>Category: " +
-                    event.category +
-                    "</p>" +
-
-                    "<p>Description: " +
-                    event.description +
-                    "</p>";
-
-
-                let students =
-                    registrations.filter(
-                        function(registration) {
-
-                            return (
-                                registration.eventId
-                                == event.id
-                            );
-
-                        }
-                    );
-
-
-                let studentList =
-                    document.createElement("div");
-
-
-                if (students.length === 0) {
-
-                    studentList.innerHTML =
-                        "<p>No students registered.</p>";
-
-                } else {
-
-                    studentList.innerHTML =
-                        "<h4>Registered Students</h4>";
-
-                    students.forEach(
-                        function(student) {
-
-                            studentList.innerHTML +=
-                                "<p>Name: " +
-                                student.name +
-                                "<br>Email: " +
-                                student.email +
-                                "</p>";
-
-                        }
-                    );
-
-                }
-
-
-                let editButton =
-                    document.createElement("button");
-
-                editButton.textContent =
-                    "Edit";
-
-
-                editButton.addEventListener(
-                    "click",
-                    function() {
-
-                        document.getElementById("title").value =
-                            event.title;
-
-                        document.getElementById("date").value =
-                            event.date;
-
-                        document.getElementById("department").value =
-                            event.department;
-
-                        document.getElementById("category").value =
-                            event.category;
-
-                        document.getElementById("description").value =
-                            event.description;
-
-                        editingEventId =
-                            event.id;
-
-                    }
-                );
-
-
-                let deleteButton =
-                    document.createElement("button");
-
-                deleteButton.textContent =
-                    "Delete";
-
-
-                deleteButton.addEventListener(
-                    "click",
-                    function() {
-
-                        $.ajax({
-
-                            url:
-                                SYSTEM_API_URL + "/" + event.id,
-
-                            type: "DELETE",
-
-                            success: function() {
-
-                                console.log(
-                                    "Event deleted."
-                                );
-
-                                displayDashboardEvents();
-
-                            },
-
-                            error: function() {
-
-                                console.log(
-                                    "Could not delete event."
-                                );
-
-                            }
-
-                        });
-
-                    }
-                );
-
-
-                card.appendChild(studentList);
-
-                card.appendChild(editButton);
-
-                card.appendChild(deleteButton);
-
-                container.appendChild(card);
-
+            let students = registrations.filter(function (registration) {
+                return registration.eventId == event.id;
             });
 
-        }
-    );
+            let studentList = $("<div></div>");
+
+            if (students.length === 0) {
+                studentList.append($("<p></p>").text("No students registered."));
+            } else {
+                studentList.append($("<h4></h4>").text("Registered Students"));
+
+                students.forEach(function (student) {
+                    studentList.append(
+                        $("<p></p>").text("Name: " + student.name + " | Email: " + student.email)
+                    );
+                });
+            }
+
+            let editButton = $("<button></button>")
+                .text("Edit")
+                .on("click", function () {
+                    $("#title").val(event.title);
+                    $("#date").val(event.date);
+                    $("#department").val(event.department);
+                    $("#category").val(event.category);
+                    $("#description").val(event.description);
+                    editingEventId = event.id;
+                });
+
+            let deleteButton = $("<button></button>")
+                .text("Delete")
+                .on("click", function () {
+                    $.ajax({
+                        url: SYSTEM_API_URL + "/" + event.id,
+                        type: "DELETE",
+                        success: function () {
+                            console.log("Event deleted.");
+                            displayDashboardEvents();
+                        },
+                        error: function () {
+                            console.log("Could not delete event.");
+                        }
+                    });
+                });
+
+            card.append(studentList, editButton, deleteButton);
+            $(container).append(card);
+
+        });
+
+    });
 
 }
 
