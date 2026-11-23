@@ -22,8 +22,9 @@ public class RegistrationsController : ControllerBase
     public IActionResult CreateRegistration(
         Registration registration)
     {
-        registration.Id =
-            registrations.Count + 1;
+        registration.Id = registrations.Count == 0
+            ? 1
+            : registrations.Max(r => r.Id) + 1;
 
         registrations.Add(registration);
 
