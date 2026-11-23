@@ -35,29 +35,56 @@ A web-based application designed to simplify campus event management. Students c
 - Integrated frontend components with REST API endpoints.
 - Worked with C# backend controllers and API operations.
 - Gained practical experience with application deployment and configuration through Microsoft Azure.
-
 ## 📁 Project Structure
 
 ```text
-Campus-Events/
+campus-events/
 │
-├── backend/
-│   └── EventService/
-│
-├── serverless/
-│
-├── css/
-│
-├── js/
-│
-├── images/
-│
+├── README.md
+├── .gitattributes
 ├── index.html
 ├── dashboard.html
 ├── event-details.html
 ├── event-form.html
 │
-└── README.md
+├── css/
+│   └── style.css
+│
+├── data/
+│   └── events.json
+│
+├── js/
+│   ├── app.js
+│   ├── ui.js
+│   ├── system.js
+│   ├── storage.js
+│   ├── registration.js
+│   └── event-details.js
+│
+├── images/
+│   └── community.jpg
+│
+├── backend/
+│   └── EventService/
+│       ├── Program.cs
+│       ├── Controllers/
+│       ├── Models/
+│       ├── Properties/
+│       ├── Dockerfile
+│       ├── EventService.csproj
+│       ├── EventService.http
+│       ├── appsettings.json
+│       └── appsettings.Development.json
+│
+└── serverless/
+    ├── Properties/
+    │   └── launchSettings.json
+    ├── .gitignore
+    ├── Program.cs
+    ├── EventCreated.cs
+    ├── serverless.csproj
+    └── host.json
+
 ```
 
 ## ⚠️ Current Limitations
